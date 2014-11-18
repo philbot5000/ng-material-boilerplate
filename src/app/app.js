@@ -15,6 +15,23 @@ angular.module( 'ngBoilerplate', [
 })
 
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
+
+      var item = {
+        face: '/img/list/60.jpeg',
+        what: 'Brunch this weekend?',
+        who: 'Min Li Chan',
+        notes: "I'll be in your neighborhood doing errands."
+      };
+      $scope.todos = [];
+      for (var i = 0; i < 15; i++) {
+        $scope.todos.push({
+          face: '/img/list/60.jpeg',
+          what: "Brunch this weekend?",
+          who: "Min Li Chan",
+          notes: "I'll be in your neighborhood doing errands."
+        });
+      }
+
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
       $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;

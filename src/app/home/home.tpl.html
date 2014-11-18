@@ -1,10 +1,18 @@
-<md-content>
+<md-toolbar md-scroll-shrink md-theme="blue" class="md-tall">
+  <div class="md-toolbar-tools">
+    <md-button ui-sref="about">About</md-button>
+    <h3>
+      <span>ng-material-boilerplate</span>
+    </h3>
+  </div>
+</md-toolbar>
+<md-content style="height: 600px;">
   <md-list>
 
     <md-item ng-repeat="item in todos">
       <md-item-content>
         <div class="md-tile-left">
-          <!--<img ng-src="{{item.face}}" alt="{{item.who}}" class="face">-->
+          <img src="http://aht.seriouseats.com/images/20090130-hamburgeramerica-dicks.jpg" alt="{{item.who}}" class="face">
         </div>
         <div class="md-tile-content">
           <h3>{{item.what}}</h3>
@@ -18,7 +26,6 @@
     </md-item>
 
   </md-list>
-
 </md-content>
 
 <!--<div class="jumbotron">-->
