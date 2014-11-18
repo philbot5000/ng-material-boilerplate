@@ -14,7 +14,7 @@
  */
 angular.module( 'ngBoilerplate.home', [
   'ui.router',
-  'plusOne'
+  'ngMaterial'
 ])
 
 /**
@@ -38,7 +38,43 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $mdDialog ) {
+
+      console.log('MDDialog', $mdDialog);
+
+      $scope.data = {};
+
+      $scope.data.cb1 = true;
+
+      $scope.alert = '';
+
+      $scope.showAlert = function(ev) {
+        $mdDialog.show(
+            $mdDialog.alert()
+                .title('This is an alert title')
+                .content('You can specify some description text in here.')
+                .ariaLabel('Password notification')
+                .ok('Got it!')
+                .targetEvent(ev)
+        );
+      };
+
+      var item = {
+        face: '/img/list/60.jpeg',
+        what: 'Brunch this weekend?',
+        who: 'Min Li Chan',
+        notes: "I'll be in your neighborhood doing errands."
+      };
+      $scope.todos = [];
+      for (var i = 0; i < 15; i++) {
+        $scope.todos.push({
+          face: '/img/list/60.jpeg',
+          what: "Brunch this weekend?",
+          who: "Min Li Chan",
+          notes: "I'll be in your neighborhood doing errands."
+        });
+      }
+
 })
 
 ;
